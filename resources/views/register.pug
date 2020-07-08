@@ -1,0 +1,16 @@
+html
+    title= title || "Register"
+    head
+        link(rel="icon", href=icon)
+        link(rel="stylesheet", href="/css/register.css")
+    body
+        div#Background
+            img(src=icon)#Logo
+            form#Register_Form
+                input(placeholder="New username")#Register_Username
+                br
+                input(placeholder="New password", type="password")#Register_Password
+                br
+                button(type="submit")#Register_Submit Create Account
+        script(src="/js/jquery.js")
+        script(src="/js/register.js")

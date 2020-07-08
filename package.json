@@ -1,0 +1,23 @@
+{
+  "name": "chattingapp",
+  "version": "1.0.0",
+  "description": "Chatting app made with Socket.io",
+  "main": "server/app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "",
+    "start": "nodemon server/app.js"
+  },
+  "author": "ta334",
+  "license": "ISC"
+}

@@ -1,0 +1,22 @@
+html
+    title= title || "Public Room"
+    head
+        link(rel="icon", href=icon)
+        link(rel="stylesheet", href="/css/public.css")
+    body   
+        div#Side_Panel
+            img(src=icon)#Panel_Image
+            <br>
+            div#username 
+            <br>
+            a(href="javascript:logout()", style="margin-top: 50px;")#Button Log out
+            a(href="javascript:publicRoom()")#Button Public Room
+            a(href="javascript:dashboard()")#Button Dashboard
+        div#Chat
+        form#Submit_Message
+            input(placeholder="Type your message here", autocomplete="off")#Chat_Input
+            button(style="visibility:hidden")
+        script(src="/socket.io/socket.io.js")
+        script(src="/js/jquery.js")
+        script(src="/js/pages.js")
+        script(src="/js/public.js")

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+::-webkit-scrollbar-corner {background: rgba(0,0,0,0);}
+::-webkit-scrollbar {background: none;}
+html, body
+{
+    margin: 0; padding: 0;
+    background: url(/images/background.png) no-repeat center center fixed; background-size: cover;
+    display: none
+}
+#Side_Panel
+{
+    position: fixed;
+    float: left;
+    width: 220px;
+    padding-top: 20px;
+    height: calc(100% - 20px);
+    text-align: center;
+    background-color: rgb(22, 22, 22);
+}
+
+a {margin-top: 30px; text-decoration: none;}
+#Button
+{
+    margin-top: 0;
+    width: calc(100% - 20px);
+    display: inline-block;
+    background: transparent;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    background: rgb(31, 31, 31);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background 0.2s;
+}
+#Button:hover {background: rgb(94, 94, 94);}
+
+#Chat
+{
+    padding: 20px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 0; bottom: 0; left: 0; margin: auto;
+    right: calc(0% - 225px);
+    width: 500px;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    color: white;
+    background: rgb(37, 37, 37);
+    overflow-y: scroll;
+}
+#Chat_Input
+{
+    padding-left: 10px;
+    position: fixed;
+    left: 0; right: calc(0% - 225px); top: 0; bottom: calc(0% - 600px); margin: auto;
+    width: 540px;
+    height: 40px;
+    background: white;
+    border: white;
+    border-radius: 5px;
+}
+#Chat_Message_Outgoing
+{
+    height: max-content;
+    width: max-content;
+    background: blue;
+    color: white;
+    word-wrap: break-word;
+    max-width: 460;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+#Chat_Message_Incoming
+{
+    height: max-content;
+    width: max-content;
+    background: silver;
+    color: rgb(27, 27, 27);
+    word-wrap: break-word;
+    max-width: 460;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}

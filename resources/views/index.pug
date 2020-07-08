@@ -1,0 +1,17 @@
+html
+	head
+		link(rel="stylesheet", href="/css/index.css")
+		link(rel="icon", href=icon)
+		title= title
+	body
+		div#Background
+			img(src=icon)#Logo
+			form#Login_Form
+				input(placeholder="Username")#Login_Username
+				br
+				input(placeholder="Password", type="password")#Login_Password
+				br
+				button(type="submit")#Login_Submit Login
+				button(type="button", onclick="location.href='/register'")#New_Account_Submit Create new account
+		script(src="/js/jquery.js")
+		script(src="/js/index.js")
