@@ -62,28 +62,33 @@ a {margin-top: 30px; text-decoration: none;}
     background: white;
     border: white;
     border-radius: 5px;
+    font-family: 'Open Sans';
 }
 #Chat_Message_Outgoing
 {
     height: max-content;
     width: max-content;
-    background: blue;
+    background: rgb(0, 68, 255);
     color: white;
     word-wrap: break-word;
     max-width: 460;
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+    font-size: 12px;
+    font-family: 'Open Sans';
 }
 #Chat_Message_Incoming
 {
     height: max-content;
     width: max-content;
-    background: silver;
+    background: white;
     color: rgb(27, 27, 27);
     word-wrap: break-word;
     max-width: 460;
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+    font-size: 12px;
+    font-family: 'Open Sans';
 }
