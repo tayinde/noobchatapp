@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: url(/images/background.png) no-repeat center center fixed;
+    background-size: cover;
+}
+#Error_Message
+{
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0; margin: auto;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    color: white;
+    font-weight: 100;
+    font-size: 30px;
+    font-family: 'Open Sans';
+}
+#Login
+{
+    cursor: pointer;
+    position: fixed;
+    top: calc(0% + 100px); left: 0; bottom: 0; right: 0; margin: auto;
+    width: 200px;
+    text-align: center;
+    height: 20px;
+    padding: 10px;
+    background: blue;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Open Sans';
+    transition: background 0.3s;
+} #Login:hover {background: darkblue;}
