@@ -15,6 +15,7 @@ $(() =>
             $("body").css('display', 'inline');
             $("html").css('display', 'inline');
             $("#username").html(username);
+            $("#Logo_Name").html(`NoobChatApp <b>${username}</b>`);
             $("#pfp").css('background', `url(${pfp})`)
             $("#pfp").css('background-size', 'cover');
         }

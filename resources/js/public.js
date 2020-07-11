@@ -16,6 +16,7 @@ $(async () =>
         {
             $("body").css('display', 'inline');
             $("html").css('display', 'inline');
+            $("#Logo_Name").html(`NoobChatApp <b>${username}</b>`);
             s = res;
         }
     });

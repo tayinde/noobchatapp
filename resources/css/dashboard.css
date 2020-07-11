@@ -25,6 +25,7 @@ html, body
 }
 #Logo_Name
 {
+    text-align: center;
     color: white;
     font-family: 'Open Sans';
     padding: 13px;
