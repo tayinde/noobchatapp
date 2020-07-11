@@ -40,13 +40,13 @@ module.exports =
         {
             res.render('dashboard.pug', {title: 'Dashboard', icon: logo});
         })
-        .post('/dashboard', (req, res) =>
+        .post('/dashboard', async (req, res) =>
         {
             res.setHeader('Content-Type', 'text/plain');
             if (req.body.token == 404) {
                 res.send('redirect');
             }
-            else if (!database.find(req.body.username, req.body.token))
+            else if (database.find(req.body.username, req.body.token) == false)
             {
                 res.send('redirect');
             }
@@ -56,13 +56,13 @@ module.exports =
         {
             res.render('public.pug', {title: 'Public Room', icon: logo});
         })
-        .post('/public', (req, res) =>
+        .post('/public', async (req, res) =>
         {
             res.setHeader('Content-Type', 'text/plain');
             if (req.body.token == 404) {
                 res.send('redirect');
             }
-            else if (!(database.find(req.body.username, req.body.token)))
+            else if (await database.find(req.body.username, req.body.token) == false)
             {
                 res.send('redirect');
             }
