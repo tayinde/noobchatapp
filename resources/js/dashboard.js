@@ -18,7 +18,7 @@ $(() =>
             $("#User_Name").html(username);
             $("#User_Image").attr('src', pfp);
             $("#pfp").css('background', `url(${pfp})`)
-            $("#pfp").css('background-size', 'cover');
+            $("#pfp").css('background-size', '100% 100%');
         }
     });
     $('#pfp').on('click', (e) =>
