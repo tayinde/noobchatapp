@@ -14,7 +14,8 @@ module.exports =
         {
             authenticated: true,
             username: acc.username,
-            token: res.token
+            token: res.token,
+            pfp: res.pfp
         } :
         {
             authenticated: false
@@ -48,6 +49,7 @@ module.exports =
                 {
                     username: acc.username,
                     password: acc.password,
+                    pfp: "/images/logo.png",
                     token: token
                 });
                 console.log("Account created: " + acc.username);
@@ -70,6 +72,14 @@ module.exports =
         var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
         var result = await Database.collection(username).findOne({token: token});
         return result != null;
+    },
+    updatePfp: async (username, token, pfp) =>
+    {
+        var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
+        Database.collection(username).updateOne(
+            {username: username},
+            {$set: {"pfp": pfp}},
+        )
     }
 }
 

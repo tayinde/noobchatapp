@@ -4,9 +4,9 @@ const secret = require('./routing.js').secret;
 
 var SocketHandler =
 {
-    sendMsg: (msg, username) =>
+    sendMsg: (msg, username, pfp) =>
     {
-        IO.sockets.emit(secret, msg, username);
+        IO.sockets.emit(secret, msg, username, pfp);
     },
     init: () =>
     {
@@ -22,7 +22,7 @@ var SocketHandler =
                 }
                 if (result.authenticated == true)
                 {
-                    SocketHandler.sendMsg(result.msg, res.username);
+                    SocketHandler.sendMsg(result.msg, res.username, res.pfp);
                 } else {socket.emit('unauth')}
             })
         })

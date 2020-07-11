@@ -18,6 +18,23 @@ html, body
     background-color: rgb(22, 22, 22);
 }
 
+#Logo_Container
+{
+    display: flex;
+    padding: 20px;
+}
+#Logo_Name
+{
+    color: white;
+    font-family: 'Open Sans';
+    padding: 13px;
+}
+#Logo_Image
+{
+    width: 50px;
+    height: 50px;
+}
+
 a {margin-top: 30px; text-decoration: none;}
 #Button
 {
@@ -34,3 +51,41 @@ a {margin-top: 30px; text-decoration: none;}
     transition: background 0.2s;
 }
 #Button:hover {background: rgb(94, 94, 94);}
+
+#Dashboard_Area
+{
+    padding: 20px;
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    left: calc(0% + 220px); right: 0; top: 0%; bottom: 0%; margin: auto;
+    background: rgb(22, 22, 22);
+}
+#pfp
+{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 85px;
+    border: none;
+    background-color: black;
+} #pfp:hover {cursor: pointer;}
+#username
+{
+    padding: 52px;
+    font-family: 'Open Sans';
+    font-size: 40px;
+    color: white;
+}
+
+#pfp_Form {display: none; padding-top: 20px;}
+#pfp_Input
+{
+    padding: 10px;
+    height: 30px;
+    width: 100%;
+    font-family: 'Open Sans';
+    border-radius: 20px;
+    font-size: 12px;
+    border: none;
+}

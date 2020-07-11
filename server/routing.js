@@ -19,6 +19,7 @@ module.exports =
     {
         App.set('view engine', 'pug');
         App.set('views', './resources/views')
+        App.use(Express.json({limit: '10kb'}));
         App.use(Express.static('./resources'));
         App.use(bodyParser.urlencoded({extended: true}));
         App.use(compression());
@@ -74,6 +75,14 @@ module.exports =
                 password: req.body.password
             });
             res.send(loginData);
+        })
+        .post('/pfpChange', (req, res) =>
+        {
+            var pfp = req.body.pfp;
+            var username = req.body.username;
+            var token = req.body.token;
+            if (pfp && pfp.trim()) database.updatePfp(username, token, pfp);
+            res.end();
         })
         .post('/register', async (req, res, next) =>
         {

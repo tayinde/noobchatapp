@@ -8,6 +8,7 @@ html, body
     background: url(/images/background.png) no-repeat center center fixed; background-size: cover;
     display: none
 }
+#alignright {display: flex; width: 100%;}
 #Side_Panel
 {
     position: fixed;
@@ -17,6 +18,23 @@ html, body
     height: calc(100% - 20px);
     text-align: center;
     background-color: rgb(22, 22, 22);
+}       
+
+#Logo_Container
+{
+    display: flex;
+    padding: 20px;
+}
+#Logo_Name
+{
+    color: white;
+    font-family: 'Open Sans';
+    padding: 13px;
+}
+#Logo_Image
+{
+    width: 50px;
+    height: 50px;
 }
 
 a {margin-top: 30px; text-decoration: none;}
@@ -47,7 +65,7 @@ a {margin-top: 30px; text-decoration: none;}
     width: 500px;
     max-width: 500px;
     height: 500px;
-    border-radius: 5px;
+    border-top-left-radius: 15px; border-top-right-radius: 15px;
     color: white;
     background: rgb(37, 37, 37);
     overflow-y: scroll;
@@ -56,12 +74,12 @@ a {margin-top: 30px; text-decoration: none;}
 {
     padding-left: 10px;
     position: fixed;
-    left: 0; right: calc(0% - 225px); top: 0; bottom: calc(0% - 600px); margin: auto;
+    left: 0; right: calc(0% - 225px); top: 0; bottom: calc(0% - 580px); margin: auto;
     width: 540px;
     height: 40px;
     background: white;
     border: white;
-    border-radius: 5px;
+    border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;
     font-family: 'Open Sans';
 }
 #Chat_Message_Outgoing
@@ -91,4 +109,10 @@ a {margin-top: 30px; text-decoration: none;}
     margin-top: 10px;
     font-size: 12px;
     font-family: 'Open Sans';
+}
+#Chat_Pfp
+{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
 }

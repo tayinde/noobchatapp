@@ -12,6 +12,7 @@ $('#Login_Form').on('submit', (event) =>
         {
             localStorage.setItem("u", res.username);
             localStorage.setItem("token", res.token);
+            localStorage.setItem("pfp", res.pfp)
             window.location.href = "/dashboard";
         }
         else

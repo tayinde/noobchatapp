@@ -1,6 +1,7 @@
 // import io from 'socket.io'; import 'jquery'
 var username = localStorage.getItem("u");
 var token = localStorage.getItem("token") || 404;
+var pfp = localStorage.getItem("pfp");
 var s;
 var socket = io();
 
@@ -25,21 +26,21 @@ $(async () =>
         {
             var msg = $('#Chat_Input').val();
             $('#Chat_Input').val('');
-            socket.emit('chatmsg', {username: username, token: token, msg: msg});
+            socket.emit('chatmsg', {username: username, token: token, msg: msg, pfp: pfp});
         }
     })
     
-    socket.on(s, (msg, user) => 
+    socket.on(s, (msg, user, msgPfP) => 
     {
         if (msg && msg.trim())
         {
             if (user != username)
             {
-                $('#Chat').append(`<div style="display: flex;width: 100%;"><div style="flex:1"></div><p id="Chat_Message_Incoming">${user}: ${msg}</p></div>`);
+                $('#Chat').append(`<div id="alignright"><div style="flex:1"></div><img src="${msgPfP}" id="Chat_Pfp"></div> <div id="alignright"><div style="flex:1"></div><p id="Chat_Message_Incoming">${user}: ${msg}</p></div>`);
             }
             else
             {
-                $('#Chat').append(`<p id="Chat_Message_Outgoing">${user}: ${msg}</p>`);
+                $('#Chat').append(`<img src="${msgPfP}" id="Chat_Pfp"><p id="Chat_Message_Outgoing">${user}: ${msg}</p>`);
             }
             $('#Chat')[0].scrollBy({behavior: "smooth", top: $('#Chat')[0].scrollHeight})
         }

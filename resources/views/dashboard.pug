@@ -5,13 +5,19 @@ html
         link(rel="stylesheet", href="/css/dashboard.css")
     body   
         div#Side_Panel
-            img(src=icon)#Panel_Image
-            <br>
-            div#username 
-            <br>
+            a(href="/dashboard")
+                div#Logo_Container
+                    img(src=icon)#Logo_Image
+                    div#Logo_Name NoobChatApp
             a(href="javascript:logout()", style="margin-top: 50px;")#Button Log out
             a(href="javascript:publicRoom()")#Button Public Room
             a(href="javascript:dashboard()")#Button Dashboard
+        div#Dashboard_Area
+            div(style="display:flex")
+                button#pfp
+                div#username Username
+            form#pfp_Form
+                input(placeholder="Enter the URL to your new profile picture.")#pfp_Input
         script(src="/js/jquery.js")
         script(src="/js/pages.js")
         script(src="/js/dashboard.js")
