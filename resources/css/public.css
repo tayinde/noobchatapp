@@ -69,7 +69,7 @@ a {margin-top: 30px; text-decoration: none;}
     height: 500px;
     border-top-left-radius: 15px; border-top-right-radius: 15px;
     color: white;
-    background: rgb(37, 37, 37);
+    background: rgb(22, 22, 22);
     overflow-y: scroll;
 }
 #Chat_Input
