@@ -46,7 +46,7 @@ module.exports =
             if (req.body.token == 404) {
                 res.send('redirect');
             }
-            else if (database.find(req.body.username, req.body.token) == false)
+            else if (await database.find(req.body.username, req.body.token) == false)
             {
                 res.send('redirect');
             }
