@@ -12,6 +12,9 @@ $(() =>
             window.location.href = '/login';
         } else
         {
+            res = JSON.parse(res);
+            localStorage.setItem("pfp", res.pfp);
+            pfp = res.pfp;
             $("body").css('display', 'inline');
             $("html").css('display', 'inline');
             $("#username").html(username);

@@ -14,11 +14,14 @@ $(async () =>
             window.location.href = '/login';
         } else
         {
+            res = JSON.parse(res);
+            localStorage.setItem("pfp", res.pfp);
+            pfp = res.pfp;
             $("body").css('display', 'inline');
             $("html").css('display', 'inline');
             $("#User_Name").html(username);
             $("#User_Image").attr('src', pfp);
-            s = res;
+            s = res.s;
         }
     });
     $('#Submit_Message').on('submit', async (e) =>

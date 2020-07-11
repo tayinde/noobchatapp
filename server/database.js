@@ -80,6 +80,11 @@ module.exports =
             {username: username},
             {$set: {"pfp": pfp}},
         )
+    },
+    get: async (acc) =>
+    {
+        var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
+        return (await Database.collection(acc.username).findOne({username: acc.username, token: acc.token}));
     }
 }
 

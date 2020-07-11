@@ -43,14 +43,17 @@ module.exports =
         .post('/dashboard', async (req, res) =>
         {
             res.setHeader('Content-Type', 'text/plain');
-            if (req.body.token == 404) {
-                res.send('redirect');
-            }
-            else if (await database.find(req.body.username, req.body.token) == false)
+            if ((req.body.token == 404) || (await database.find(req.body.username, req.body.token) == false))
             {
                 res.send('redirect');
             }
-            else {res.send(false)}
+            else
+            {
+                res.send({
+                    authenticated: true,
+                    pfp: (await database.get({username: req.body.username, token: req.body.token})).pfp
+                })
+            }
         })
         .get('/public', (req, res) =>
         {
@@ -59,14 +62,18 @@ module.exports =
         .post('/public', async (req, res) =>
         {
             res.setHeader('Content-Type', 'text/plain');
-            if (req.body.token == 404) {
-                res.send('redirect');
-            }
-            else if (await database.find(req.body.username, req.body.token) == false)
+            if ((req.body.token == 404) || (await database.find(req.body.username, req.body.token) == false))
             {
                 res.send('redirect');
             }
-            else {res.send(secret)}
+            else
+            {
+                res.send({
+                    authenticated: true,
+                    s: secret,
+                    pfp: (await database.get({username: req.body.username, token: req.body.token})).pfp
+                })
+            }
         })
         .post('/login', async (req, res) =>
         {
