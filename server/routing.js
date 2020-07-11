@@ -40,9 +40,12 @@ module.exports =
         {
             res.render('dashboard.pug', {title: 'Dashboard', icon: logo});
         })
+        .get('*', (req, res) =>
+        {
+            res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
+        })
         .post('/dashboard', async (req, res) =>
         {
-            res.setHeader('Content-Type', 'text/plain');
             if ((req.body.token == 404) || (await database.find(req.body.username, req.body.token) == false))
             {
                 res.send('redirect');
@@ -61,7 +64,6 @@ module.exports =
         })
         .post('/public', async (req, res) =>
         {
-            res.setHeader('Content-Type', 'text/plain');
             if ((req.body.token == 404) || (await database.find(req.body.username, req.body.token) == false))
             {
                 res.send('redirect');
