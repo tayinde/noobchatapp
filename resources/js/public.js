@@ -16,7 +16,8 @@ $(async () =>
         {
             $("body").css('display', 'inline');
             $("html").css('display', 'inline');
-            $("#Logo_Name").html(`NoobChatApp <b>${username}</b>`);
+            $("#User_Name").html(username);
+            $("#User_Image").attr('src', pfp);
             s = res;
         }
     });

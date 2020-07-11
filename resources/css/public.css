@@ -20,18 +20,19 @@ html, body
     background-color: rgb(22, 22, 22);
 }       
 
-#Logo_Container
+#Logo_Container, #User_Container
 {
     display: flex;
     padding: 20px;
 }
-#Logo_Name
+#Logo_Name, #User_Name
 {
+    text-align: center;
     color: white;
     font-family: 'Open Sans';
     padding: 13px;
 }
-#Logo_Image
+#Logo_Image, #User_Image
 {
     width: 50px;
     height: 50px;
