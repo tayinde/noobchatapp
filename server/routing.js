@@ -40,10 +40,6 @@ module.exports =
         {
             res.render('dashboard.pug', {title: 'Dashboard', icon: logo});
         })
-        .get('*', (req, res) =>
-        {
-            res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
-        })
         .post('/dashboard', async (req, res) =>
         {
             if ((req.body.token == 404) || (await database.find(req.body.username, req.body.token) == false))
@@ -100,6 +96,10 @@ module.exports =
                 password: req.body.password
             });
             res.send(registerData);
+        })
+        .get('*', (req, res) =>
+        {
+            res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
         })
     }
 }
