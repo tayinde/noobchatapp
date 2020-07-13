@@ -1,12 +1,11 @@
 // import io from 'socket.io'; import 'jquery'
-var username = localStorage.getItem("u");
-var token = localStorage.getItem("token") || 404;
-var pfp = localStorage.getItem("pfp");
-var s;
-var socket = io();
-
 $(async () =>
 {
+    var username = localStorage.getItem("u");
+    var token = localStorage.getItem("token") || 404;
+    var pfp = localStorage.getItem("pfp");
+    var s;
+    var socket = io();
     await $.post("/public", {username: username, token: token}, (res) =>
     {
         if (res == "redirect")
