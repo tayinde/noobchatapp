@@ -12,7 +12,7 @@ var SocketHandler =
     {
         IO.on('connection', (socket) =>
         {
-            socket.on('chatmsg', async (res) =>
+            socket.on(secret, async (res) =>
             {
                 if (!res.msg || !res.msg.trim()) return null;
                 var result = 

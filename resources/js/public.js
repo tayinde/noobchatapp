@@ -30,7 +30,7 @@ $(async () =>
         {
             var msg = $('#Chat_Input').val();
             $('#Chat_Input').val('');
-            socket.emit('chatmsg', {username: username, token: token, msg: msg, pfp: pfp});
+            socket.emit(s, {username: username, token: token, msg: msg, pfp: pfp});
         }
     })
     
