@@ -39,11 +39,23 @@ $(async () =>
         {
             if (user != username)
             {
-                $('#Chat').append(`<div id="alignright"><div style="flex:1"></div><img src="${msgPfP}" id="Chat_Pfp"></div> <div id="alignright"><div style="flex:1"></div><p id="Chat_Message_Incoming">${user}: ${msg}</p></div>`);
+                var html = `
+                <div id="alignright">
+                    <div style="flex:1"></div>
+                    <a href="/${user}"><img src="${msgPfP}" id="Chat_Pfp"></a>
+                </div>
+                <div id="alignright">
+                    <div style="flex:1"></div>
+                    <p id="Chat_Message_Incoming">${user}: ${msg}</p>
+                </div>`
+                $('#Chat').append(html);
             }
             else
             {
-                $('#Chat').append(`<img src="${msgPfP}" id="Chat_Pfp"><p id="Chat_Message_Outgoing">${user}: ${msg}</p>`);
+                var html = `
+                <a href="/${user}"><img src="${msgPfP}" id="Chat_Pfp"></a>
+                <p id="Chat_Message_Outgoing">${user}: ${msg}</p>`
+                $('#Chat').append(html);
             }
             $('#Chat')[0].scrollBy({behavior: "smooth", top: $('#Chat')[0].scrollHeight})
         }

@@ -97,9 +97,17 @@ module.exports =
             });
             res.send(registerData);
         })
-        .get('*', (req, res) =>
+        .get('*', async (req, res) =>
         {
-            res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
+            var user = req.url.replace('/', '');
+            if (await database.publicFind(user) == true)
+            {
+                res.status(404).render('otheruser.pug', {user: user, icon: "/images/logo.png", pfp: (await database.publicGet(user)).pfp})
+            }
+            else
+            {
+                res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
+            }
         })
     }
 }

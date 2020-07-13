@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html, body
+{
+    margin: 0; padding: 0;
+    background: url(/images/background.png) no-repeat center center fixed; background-size: cover;
+    display: none
+}
+
+#Side_Panel
+{
+    position: fixed;
+    float: left;
+    width: 220px;
+    padding-top: 20px;
+    height: calc(100% - 20px);
+    text-align: center;
+    background-color: rgb(22, 22, 22);
+}
+
+#Logo_Container, #User_Container
+{
+    display: flex;
+    padding: 20px;
+}
+#Logo_Name, #User_Name
+{
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans';
+    padding: 13px;
+}
+#Logo_Image, #User_Image
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+a {margin-top: 30px; text-decoration: none;}
+#Button
+{
+    margin-top: 0;
+    width: calc(100% - 20px);
+    display: inline-block;
+    background: transparent;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    color: white;
+    padding: 10px;
+    background: rgb(31, 31, 31);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background 0.2s;
+}
+#Button:hover {background: rgb(94, 94, 94);}
+
+#Dashboard_Area
+{
+    padding: 20px;
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    left: calc(0% + 220px); right: 0; top: 0%; bottom: 0%; margin: auto;
+    background: rgb(22, 22, 22);
+}
+#pfp
+{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 85px;
+    border: none;
+    background-color: black;
+}
+#username
+{
+    padding: 52px;
+    font-family: 'Open Sans';
+    font-size: 40px;
+    color: white;
+}
+
+#pfp_Form {display: none; padding-top: 20px;}
+#pfp_Input
+{
+    padding: 10px;
+    height: 30px;
+    width: 100%;
+    font-family: 'Open Sans';
+    border-radius: 20px;
+    font-size: 12px;
+    border: none;
+}

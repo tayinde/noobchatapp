@@ -1,0 +1,24 @@
+html
+    title= title || "Dashboard"
+    head
+        link(rel="icon", href=icon)
+        link(rel="stylesheet", href="/css/otheruser.css")
+    body   
+        div#Side_Panel
+            a(href="/dashboard")
+                div#Logo_Container
+                    img(src=icon)#Logo_Image
+                    div#Logo_Name NoobChatApp
+                div#User_Container
+                    img(src=icon)#User_Image
+                    div#User_Name Username
+            a(href="javascript:logout()", style="margin-top: 50px;")#Button Log out
+            a(href="javascript:publicRoom()")#Button Public Room
+            a(href="javascript:dashboard()")#Button Dashboard
+        div#Dashboard_Area
+            div(style="display:flex")
+                div(style=`background: url(${pfp})`)#pfp
+                div#username= user
+        script(src="/js/jquery.js")
+        script(src="/js/pages.js")
+        script(src="/js/otheruser.js")
