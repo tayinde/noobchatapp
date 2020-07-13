@@ -10,6 +10,10 @@ var test =
         {
             return "No symbols allowed in username";
         }
+        else if ((username.toLowerCase == "dashboard") || (username.toLowerCase == "public"))
+        {
+            return "Username not permitted";
+        }
         else {return true};
     }
 }
