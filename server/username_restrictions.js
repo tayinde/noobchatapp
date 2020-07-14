@@ -6,9 +6,9 @@ var test =
         {
             return "Username must be 3-20 characters.";
         }
-        else if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(username))
+        else if (/[~`!#$%\^&*+ =\-\[\]\\';,/{}|\\":<>\?]/g.test(username))
         {
-            return "No symbols allowed in username";
+            return "No symbols or spaces allowed in username";
         }
         else if ((username.toLowerCase == "dashboard") || (username.toLowerCase == "public"))
         {
