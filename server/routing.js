@@ -103,11 +103,20 @@ module.exports =
             var search = (await database.publicGet(user.toLowerCase()));
             if (search)
             {
-                res.render('otheruser.pug', {user: search.username, icon: "/images/logo.png", pfp: search.pfp})
+                res.render('otheruser.pug', 
+                {
+                    user: search.username,
+                    icon: "/images/logo.png",
+                    pfp: search.pfp
+                });
             }
             else
             {
-                res.status(404).render('error.pug', {err: "Couldn't find the page you requested", title: "Error"});
+                res.status(404).render('error.pug',
+                {
+                    err: "Couldn't find the page you requested",
+                    title: "Error"
+                });
             }
         })
     }

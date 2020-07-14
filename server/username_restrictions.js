@@ -1,3 +1,11 @@
+const important = 
+[
+    'public',
+    'register',
+    'login',
+    'public',
+    'dashboard'
+]
 var test =
 {
     check : (username) =>
@@ -10,7 +18,7 @@ var test =
         {
             return "No symbols or spaces allowed in username";
         }
-        else if ((username.toLowerCase == "dashboard") || (username.toLowerCase == "public"))
+        else if (important.indexOf(username.toLowerCase()) >= 0)
         {
             return "Username not permitted";
         }
