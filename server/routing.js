@@ -100,9 +100,10 @@ module.exports =
         .get('*', async (req, res) =>
         {
             var user = req.url.replace('/', '');
-            if (await database.publicFind(user.toLowerCase()) == true)
+            var search = (await database.publicGet(user.toLowerCase()));
+            if (search)
             {
-                res.status(404).render('otheruser.pug', {user: user, icon: "/images/logo.png", pfp: (await database.publicGet(user)).pfp})
+                res.render('otheruser.pug', {user: search.username, icon: "/images/logo.png", pfp: search.pfp})
             }
             else
             {

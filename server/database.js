@@ -1,6 +1,7 @@
 const Mongo = require('mongodb').MongoClient;
 const tokenizer = require('./token.js');
 const usernameChecker = require('./username_restrictions.js');
+const identifier = "noobchat";
 
 module.exports =
 {
@@ -37,7 +38,7 @@ module.exports =
         }
         if (validUsername == true)
         {
-            var accountInfo = (await Database.collection(acc.username.toLowerCase()).findOne({identifier: "noobchat"}));
+            var accountInfo = (await Database.collection(acc.username.toLowerCase()).findOne({identifier: identifier}));
             if (!accountInfo && validUsername === true)
             {
                 var token = tokenizer.createToken();
@@ -48,7 +49,7 @@ module.exports =
                     password: acc.password,
                     pfp: "/images/logo.png",
                     token: token,
-                    identifier: "noobchat"
+                    identifier: identifier
                 });
                 console.log("Account created: " + acc.username);
                 return {
@@ -68,13 +69,13 @@ module.exports =
     find: async (username, token) =>
     {
         var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
-        var result = await Database.collection(username.toLowerCase()).findOne({token: token});
+        var result = await Database.collection(username.toLowerCase()).findOne({username: username, token: token});
         return result != null;
     },
     publicFind: async(username) =>
     {
         var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
-        var result = await Database.collection(username.toLowerCase()).findOne({username: username});
+        var result = await Database.collection(username.toLowerCase()).findOne({identifier: identifier});
         return result != null;
     },
     updatePfp: async (username, token, pfp) =>
@@ -93,7 +94,7 @@ module.exports =
     publicGet: async (username) =>
     {
         var Database = (await Mongo.connect(process.env.DATABASE_KEY, {useUnifiedTopology: true})).db(process.env.DB);
-        return (await Database.collection(username.toLowerCase()).findOne({username: username}));
+        return (await Database.collection(username.toLowerCase()).findOne({identifier: identifier}));
     }
 }
 
