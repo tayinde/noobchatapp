@@ -37,10 +37,7 @@ module.exports =
         }
         if (validUsername == true)
         {
-            var accountInfo = await Database.collection(acc.username.toLowerCase()).findOne(
-            {
-                username: acc.username
-            });
+            var accountInfo = Database.collection(acc.username.toLowerCase());
             if (!accountInfo && validUsername === true)
             {
                 var token = tokenizer.createToken();
