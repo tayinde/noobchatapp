@@ -37,7 +37,7 @@ module.exports =
         }
         if (validUsername == true)
         {
-            var accountInfo = Database.collection(acc.username.toLowerCase());
+            var accountInfo = (await Database.collection(acc.username.toLowerCase()).findOne({identifier: "noobchat"}));
             if (!accountInfo && validUsername === true)
             {
                 var token = tokenizer.createToken();
@@ -47,7 +47,8 @@ module.exports =
                     username: acc.username,
                     password: acc.password,
                     pfp: "/images/logo.png",
-                    token: token
+                    token: token,
+                    identifier: "noobchat"
                 });
                 console.log("Account created: " + acc.username);
                 return {
