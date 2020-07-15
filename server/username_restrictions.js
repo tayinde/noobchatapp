@@ -4,7 +4,10 @@ const important =
     'register',
     'login',
     'public',
-    'dashboard'
+    'dashboard',
+    'getmsg',
+    'pfpchange',
+    'chats'
 ]
 var test =
 {
