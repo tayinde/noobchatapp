@@ -1,10 +1,12 @@
 # noobchat
 ## Overview
 This is a chat application with a Node.js backend.
-## Run Program
-If you are running this for the first time, you should type
+## Purpose
+This app is intended to be a minimal chat app that can be used briefly to chat with people. More features will be added as time moves on.
+## Run on local machine
+Running this on your local machine will be specific to the database you make it run on, meaning that your account will not be in the official database of the project.
+<br>
+To run this program, we will clone the repository and then enter its directory.
 ```sh
-npm install
-npm start
+git clone https://github.com/tayinde/noobchat.git && cd noobchat
 ```
-This will install all necessary dependencies and then start the program. After the first time of running the code, you will only need to run `npm start`
