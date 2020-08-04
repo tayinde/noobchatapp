@@ -21,7 +21,7 @@ DB=ChatDB
 ```
 If you want to change the database URI to your own database, you can do that, as the above URI serves only as a local database. If you do this, you can skip the following steps about making the local database to work.
 <hr>
-Now you will need to install [MongoDB, using the instructions for your operating system from this link](https://docs.mongodb.com/manual/installation/). After installing MongoDB, you can use [this](https://zellwk.com/blog/local-mongodb/) tutorial to help run the MongoDB server.
+Now you will need to install MongoDB, using the instructions for your operating system from this [link](https://docs.mongodb.com/manual/installation/). After installing MongoDB, you can use [this](https://zellwk.com/blog/local-mongodb/) tutorial to help run the MongoDB server.
 <hr>
 After you have your Mongo server running, make sure you have [Node.js](https://nodejs.org/en/download/) installed, and type `npm start` in your parent directory. The app should be running on [http://localhost:8080](http://localhost:8080)
 
